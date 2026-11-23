@@ -864,7 +864,7 @@ dialog::backdrop { background: rgba(23, 20, 18, .35); }
 
 /* footer: wordmark in yellow, low contrast on purpose (decorative) */
 .footer-wordmark { width: 100%; aspect-ratio: 495 / 141; background: #F6CF8F;
-  -webkit-mask: url(../assets/nura-wordmark-whitewash.svg) center / contain no-repeat; mask: url(../assets/nura-wordmark-whitewash.svg) center / contain no-repeat; }
+  -webkit-mask: url(nura-wordmark-whitewash.svg) center / contain no-repeat; mask: url(nura-wordmark-whitewash.svg) center / contain no-repeat; }
 @media (max-width: 860px) { .deck-sticky { overflow: hidden; } .deck { width: min(260px, 62vw); margin: 24px 0 70px 4px; } }
 
 /* =========================================================
@@ -954,7 +954,7 @@ dialog::backdrop { background: rgba(23, 20, 18, .35); }
 .story { position: relative; isolation: isolate; background: var(--brick); color: #FCE7D4; }
 .story::after {
   content: ""; position: absolute; z-index: -1; right: -2%; bottom: -6%; width: 62%; aspect-ratio: 495 / 141; background: #C4573D;
-  -webkit-mask: url(../assets/nura-wordmark-whitewash.svg) center / contain no-repeat; mask: url(../assets/nura-wordmark-whitewash.svg) center / contain no-repeat;
+  -webkit-mask: url(nura-wordmark-whitewash.svg) center / contain no-repeat; mask: url(nura-wordmark-whitewash.svg) center / contain no-repeat;
   pointer-events: none;
 }
 .story .h2, .story .h2 em { color: #F6C392; }
