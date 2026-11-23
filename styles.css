@@ -1015,3 +1015,36 @@ dialog::backdrop { background: rgba(23, 20, 18, .35); }
 @keyframes hintPulse { 50% { transform: scale(1.6); opacity: .45; } }
 .hint-tap { display: none; }
 @media (hover: none), (max-width: 860px) { .hint-hover { display: none; } .hint-tap { display: inline; } }
+
+/* =========================================================
+   v11: contrast + mobile hero fixes
+   ========================================================= */
+/* steps slider: dark tonal type on the light grounds (Cleanse, Correct, Balance), white only on Shield */
+.slider { --slide-ink: #5A1E12; }                    /* 9.4:1 butter · 7.0:1 apricot · 5.1:1 coral */
+.slider[data-active="3"] { --slide-ink: #FFFFFF; }   /* 5.4:1 on brick */
+.slider-tabs button { color: var(--slide-ink); }
+.slider-tabs button[aria-selected="true"] { color: var(--ink); }
+.sstep-desc, .sstep-n { opacity: 1; }
+.sstep-when { background: rgba(255, 255, 255, .4); color: var(--slide-ink); }
+.slider[data-active="3"] .slider-tabs { background: rgba(23, 20, 18, .18); }
+.slider[data-active="3"] .sstep-when { background: rgba(23, 20, 18, .18); }
+.slider :focus-visible { outline-color: var(--slide-ink); }
+/* each slide keeps its own ink while the slides crossfade */
+#step-0 .sstep-info, #step-1 .sstep-info, #step-2 .sstep-info { color: #5A1E12; }
+#step-3 .sstep-info { color: #FFFFFF; }
+#step-0 .sstep-when, #step-1 .sstep-when, #step-2 .sstep-when { color: #5A1E12; background: rgba(255, 255, 255, .4); }
+#step-3 .sstep-when { color: #FFFFFF; background: rgba(23, 20, 18, .18); }
+
+/* mobile hero: taller photo frame (face sits lower) and a tighter text block, so copy never covers the face */
+@media (max-width: 600px) {
+  .hero { aspect-ratio: auto; height: calc(100vw * 3220 / 1734 + 110px); }
+  .hero-copy { top: 92px; gap: 12px; }
+  .hero-sub { max-width: 36ch; }
+}
+
+/* use test: only the stat that isn't already in the big numbers above (76%) */
+.usetest { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+.usetest-stats { grid-template-columns: 1fr; }
+.usetest-stats li { padding: 22px 24px; }
+.usetest-stats .num { font-size: 56px; }
+@media (max-width: 960px) { .usetest { grid-template-columns: 1fr; } .usetest-stats { grid-template-columns: 1fr; } }
