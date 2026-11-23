@@ -452,6 +452,8 @@
         const rise = clamp01(p * 3);
         panelEls.forEach((el, i) => { el.style.translate = `0 ${((1 - rise) * (60 + i * 40)).toFixed(1)}px`; });
         // boxes open on hover (desktop) or tap; the scroll only brings them in
+      } else if (panelsWrap) {
+        panelEls.forEach(el => { el.style.translate = ''; }); // mobile: no rise offset (also clears it after resizing from desktop)
       }
     };
     addEventListener('scroll', () => { if (!sq) { sq = true; requestAnimationFrame(onScrollMotion); } }, { passive: true });

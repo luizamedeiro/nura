@@ -1048,3 +1048,17 @@ dialog::backdrop { background: rgba(23, 20, 18, .35); }
 .usetest-stats li { padding: 22px 24px; }
 .usetest-stats .num { font-size: 56px; }
 @media (max-width: 960px) { .usetest { grid-template-columns: 1fr; } .usetest-stats { grid-template-columns: 1fr; } }
+
+/* =========================================================
+   v12: mobile rhythm — 70px between sections
+   ========================================================= */
+@media (max-width: 860px) {
+  /* every block after the hero starts 70px below the previous one */
+  main > section:not(.hero-wrap) { padding-top: 70px; padding-bottom: 0; }
+  .marquee { margin-top: 70px; }
+  .footer-wrap { padding-top: 70px; }
+  /* problem: no tall scroll stage on mobile, so no empty space under the cards */
+  .deck-section { height: auto; }
+  .deck-sticky { padding-block: 0; }
+  .deck { margin-bottom: 86px; }             /* room for the fanned cards, which spill 86px below the deck box */
+}
